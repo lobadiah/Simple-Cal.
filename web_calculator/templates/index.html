@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div id="previous-operand"></div>
+            <div id="current-operand">0</div>
+        </div>
+        <div class="buttons">
+            <!-- Row 1: Scientific functions -->
+            <button class="btn btn-scientific" onclick="appendScientific('sin')">sin</button>
+            <button class="btn btn-scientific" onclick="appendScientific('cos')">cos</button>
+            <button class="btn btn-scientific" onclick="appendScientific('tan')">tan</button>
+            <button class="btn btn-scientific" onclick="appendScientific('log')">log</button>
+            <button class="btn btn-scientific" onclick="appendScientific('ln')">ln</button>
+
+            <!-- Row 2: More functions -->
+            <button class="btn btn-scientific" onclick="appendScientific('sqrt')">√</button>
+            <button class="btn btn-scientific" onclick="appendScientific('exp')">exp</button>
+            <button class="btn btn-scientific" onclick="appendScientific('factorial')">x!</button>
+            <button class="btn btn-scientific" onclick="chooseOperation('power')">x<sup>y</sup></button>
+            <button class="btn btn-action" onclick="clearDisplay()">AC</button>
+
+            <!-- Row 3: Standard Calculator -->
+            <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+            <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+            <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+            <button class="btn btn-action" onclick="deleteNumber()">DEL</button>
+            <button class="btn btn-operation" onclick="chooseOperation('divide')">÷</button>
+
+            <!-- Row 4 -->
+            <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+            <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+            <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+            <button class="btn btn-operation" onclick="chooseOperation('multiply')">×</button>
+            <button class="btn btn-operation" onclick="chooseOperation('subtract')">−</button>
+
+            <!-- Row 5 -->
+            <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+            <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+            <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+            <button class="btn btn-operation" onclick="chooseOperation('add')">+</button>
+            <button class="btn btn-equals" id="equals" onclick="compute()">=</button>
+
+            <!-- Row 6 -->
+            <button class="btn btn-number btn-zero" onclick="appendNumber('0')">0</button>
+            <button class="btn btn-number" onclick="appendNumber('.')">.</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
