@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+flask_output.log
+*.png
+.pytest_cache/
+venv/
+.env
